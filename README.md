@@ -2,7 +2,9 @@
 
 Implementation of **DAST: A Dual-Stream Voice Anonymization Attacker with Staged Training**.
 
-This repository provides the inference pipeline for computing speaker similarity scores between two audio files using a pre-trained DAST (Deep ASV) speaker embedding model — an ECAPA-TDNN classifier built on top of WavLM-Large self-supervised features (192-dim embeddings).
+This repository provides the **inference pipeline** for computing speaker similarity scores between two audio files using a pre-trained DAST (Deep ASV) speaker embedding model — an ECAPA-TDNN classifier built on top of WavLM-Large self-supervised features (192-dim embeddings).
+
+For training a DAST model from scratch (or fine-tuning a pre-trained checkpoint), see the **[Training Guide](training/README.md)** in the `training/` directory.
 
 ---
 
@@ -145,6 +147,19 @@ DAST/
 │   ├── dast_model.py          # DAST ECAPA-TDNN model definition (24-layer)
 │   ├── modules.py             # Shared neural network modules
 │   └── WavLM.py               # WavLM feature extractor wrapper
+├── training/
+│   ├── README.md              # Training guide with architecture, config, and troubleshooting
+│   ├── dast_training.py       # Main training entry point
+│   ├── dast_model.py          # Dual-stream ECAPA-TDNN model definition
+│   ├── training_config.yaml   # Top-level training configuration (paths, hyperparameters)
+│   ├── libri_prepare.py       # Data preparation: Kaldi I/O, train/dev split, CSV generation
+│   ├── asv_dataset.py         # SpeechBrain dataset wrapper: audio loading, label encoding
+│   ├── WavLM.py               # WavLM model architecture
+│   ├── modules.py             # WavLM internals: attention, activations
+│   ├── hparams/
+│   │   └── train_ecapa_tdnn_small.yaml  # Inner SpeechBrain hyperparameters
+│   ├── Muon/                  # Vendored Muon optimizer (optional)
+│   └── utils/                 # Helpers: Kaldi I/O, path management, logging, result conversion
 ```
 
 ---

@@ -1,0 +1,46 @@
+data_dir: /app/datasets/vpc/T12-5/data/train-clean-360
+exp_dir: dast_test
+
+anon_data_suffix: "" # no need to change it
+
+results_summary_path: !ref <exp_dir>/results_summary/eval_anon<anon_data_suffix>/results_anon.txt
+
+# train_data_name: !ref train-clean-360<anon_data_suffix>
+train_data_name: ""
+
+eval_steps:
+  privacy:
+    - asv
+evaluation:
+  model_type: ecapa
+  model_dir: !ref <exp_dir>/asv_anon # path to existing ASV model or output for trained ASV model
+  results_dir: !ref <exp_dir>/asv_anon # path to existing ASV model or output for trained ASV model
+  distance: cosine # cosine or plda
+  plda: # ignored if distance is not plda
+    model_dir: null # path to trained PLDA or output of PLDA training
+    train_data_dir: !ref <data_dir>/<train_data_name> # path to PLDA training data
+    anon: null # trained on anonymized (true) or original (false) data
+
+seed: 1986
+model_dir: !ref <exp_dir>/asv_anon<anon_data_suffix> 
+train_data_dir: !ref <data_dir>/<train_data_name> 
+train_config: ./hparams/train_ecapa_tdnn_small.yaml
+infer_config: ./hparams/ecapa/hyperparams.yaml
+finetuning: false
+pretrained_model: null
+optimizer_type: adam
+muon_lr: 0.02
+lr: 0.01
+epochs: 7
+batch_size: 64
+num_workers: 10 #increse this can speed up the training process
+num_utt: ALL # ALL or specific number, number of utterances per speaker
+utt_selection: spk-diverse-sess # select utterances per speaker and session (spk-sess), per speaker and randomly across all sessions (spk-random), per speaker and balanced across sessions (spk-diverse-sess)
+num_spk: ALL # ALL or specific number, number of speakers
+retrain: true # retrain in any case (true) or skip training if model exists (false)
+
+# WavLM feature extractor settings
+wavlm_model_path: /app/vpc/wavlm/WavLM-Large.pt
+input_audio_folders:
+  - /app/datasets/vpc/vpc26test/multilantest/Voice-Privacy-Challenge-2026/data/merged_trainin_BM1/wav
+
