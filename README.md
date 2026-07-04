@@ -180,6 +180,9 @@ This DAST model was used as the **Attacker Model** in the **[Voice Privacy Chall
 ---
 
 ## Citation
+Contact: rarefeen14@gmail.com for any questions. 
+or DM : https://www.linkedin.com/in/ridwan-arefeen-0950941a0/
+
 
 If you find this work useful, please cite:
 
