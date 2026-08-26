@@ -247,7 +247,7 @@ def load_dast_extractor(model_dir, device):
     if sim_scorer_dir not in sys.path:
         sys.path.insert(0, sim_scorer_dir)
 
-    from speechbrain_vectors_ori import SpeechBrainVectors
+    from speechbrain_vectors import SpeechBrainVectors
     extractor = SpeechBrainVectors(
         vec_type='ecapa_ssl',
         device=device,
@@ -272,14 +272,15 @@ def extract_embedding(extractor, wav_path, device):
         vec = extractor.extract_vector(
             audio=audio_tensor,
             sr=sr,
-            wav_path=wav_path
+            wav_path=wav_path, 
+            norm = True
         )
 
     # Ensure 1-D numpy
     if isinstance(vec, torch.Tensor):
         vec = vec.cpu().numpy()
-    if vec.ndim == 2:
-        vec = vec[0, :]
+    if vec.ndim>1:
+        vec = vec[-1]
     return vec
 
 
