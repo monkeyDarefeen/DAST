@@ -32,6 +32,20 @@ your-model-dir/
 
 The pre-trained checkpoint folder includes **Stage II** checkpoints, which can be used as a starting point for further fine-tuning in **Stage III** of the DAST training pipeline. Two Stage II checkpoints are available — choose either to continue training on your own data.
 
+### 4. MultiVC Fine-tuned Checkpoint
+
+The repository also includes a new checkpoint folder:
+
+```text
+pretrained_ckpt_multiVC/
+```
+
+This folder contains a **DAST checkpoint fine-tuned on the MultiVC dataset** introduced in the paper **“Exploiting Acoustic and Content-Oriented Speaker Verification Attacks Against Multilingual Voice Anonymization.”**
+
+The checkpoint corresponds to the acoustic-oriented **WavLM–ECAPA / DAST attacker** initialized from the pre-trained DAST model and further adapted using **MultiVC**, a multilingual voice-converted corpus constructed from multiple languages and seven voice-conversion systems. It is intended for experiments on multilingual and cross-lingual voice anonymization attacks.
+
+The paper is included in this repository for reference. The formal citation for this work will be added once it is available.
+
 ---
 
 ## Running Inference
@@ -160,6 +174,8 @@ DAST/
 │   │   └── train_ecapa_tdnn_small.yaml  # Inner SpeechBrain hyperparameters
 │   ├── Muon/                  # Vendored Muon optimizer (optional)
 │   └── utils/                 # Helpers: Kaldi I/O, path management, logging, result conversion
+├── pretrained_ckpt_multiVC/  # DAST checkpoint fine-tuned on the MultiVC dataset
+└── SLT_2026_post(1).pdf      # Paper describing the MultiVC-based multilingual attacker experiments
 ```
 
 ---
@@ -176,6 +192,7 @@ This DAST model was used as the **Attacker Model** in the **[Voice Privacy Chall
 
 - **WavLM-Large checkpoint:** [Microsoft UniLM / WavLM](https://github.com/microsoft/unilm/blob/master/wavlm/README.md)
 - **Voice Privacy Challenge 2026:** <https://www.voiceprivacychallenge.org/vp2026/#welcome2026>
+- **MultiVC / multilingual attacker paper:** *Exploiting Acoustic and Content-Oriented Speaker Verification Attacks Against Multilingual Voice Anonymization* — included in this repository for reference. Citation details will be added soon.
 
 ---
 
@@ -184,7 +201,7 @@ Contact: rarefeen14@gmail.com for any questions.
 or DM : https://www.linkedin.com/in/ridwan-arefeen-0950941a0/
 
 
-If you find this work useful, please cite:
+If you find this work useful, please cite the DAST paper below. A citation for **“Exploiting Acoustic and Content-Oriented Speaker Verification Attacks Against Multilingual Voice Anonymization”** will be added here once the final citation information is available.
 
 ```bibtex
 @misc{arefeen2026dastdualstreamvoiceanonymization,
