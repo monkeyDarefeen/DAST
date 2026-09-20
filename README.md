@@ -7,6 +7,18 @@ This repository provides the **inference pipeline** for computing speaker simila
 For training a DAST model from scratch (or fine-tuning a pre-trained checkpoint), see the **[Training Guide](training/README.md)** in the `training/` directory.
 
 ---
+## Update: 20-09-2026: Stage II DAST model- further adapted using **MultiVC**
+```text
+pretrained_ckpt_multiVC/
+```
+This folder contains a **DAST checkpoint fine-tuned on the MultiVC dataset** introduced in the paper **“Exploiting Acoustic and Content-Oriented Speaker Verification Attacks Against Multilingual Voice Anonymization. (SLT 2026)”**
+
+The checkpoint corresponds to the acoustic-oriented **WavLM–ECAPA / DAST attacker** initialized from the pre-trained DAST model and further adapted using **MultiVC**, a multilingual voice-converted corpus constructed from multiple languages and seven voice-conversion systems. It is intended for experiments on multilingual and cross-lingual voice anonymization attacks.
+
+The paper is included in this repository for reference. The formal citation for this work will be added once it is available.
+
+---
+
 
 ## Prerequisites
 
@@ -36,17 +48,7 @@ The pre-trained checkpoint folder includes **Stage II** checkpoints, which can b
 
 The repository also includes a new checkpoint folder:
 
-```text
-pretrained_ckpt_multiVC/
-```
 
-This folder contains a **DAST checkpoint fine-tuned on the MultiVC dataset** introduced in the paper **“Exploiting Acoustic and Content-Oriented Speaker Verification Attacks Against Multilingual Voice Anonymization.”**
-
-The checkpoint corresponds to the acoustic-oriented **WavLM–ECAPA / DAST attacker** initialized from the pre-trained DAST model and further adapted using **MultiVC**, a multilingual voice-converted corpus constructed from multiple languages and seven voice-conversion systems. It is intended for experiments on multilingual and cross-lingual voice anonymization attacks.
-
-The paper is included in this repository for reference. The formal citation for this work will be added once it is available.
-
----
 
 ## Running Inference
 
