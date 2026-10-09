@@ -212,21 +212,18 @@ For questions, email **rarefeen14@gmail.com** or reach out via [LinkedIn](https:
 
 This repository supports **both papers**. If you use DAST, the source code, any pretrained or MultiVC-adapted checkpoint, or the associated data/resources in your research, **please cite both papers** to acknowledge the original attacker and the follow-up multilingual attack study.
 
-### Paper 1 — DAST
 
 ```bibtex
-@misc{arefeen2026dastdualstreamvoiceanonymization,
-      title={DAST: A Dual-Stream Voice Anonymization Attacker with Staged Training},
-      author={Ridwan Arefeen and Xiaoxiao Miao and Rong Tong and Aik Beng Ng and Simon See and Timothy Liu},
-      year={2026},
-      eprint={2603.12840},
-      archivePrefix={arXiv},
-      primaryClass={cs.SD},
-      url={https://arxiv.org/abs/2603.12840},
+@inproceedings{arefeen26_interspeech,
+  title     = {{DAST: A Dual-Stream Voice Anonymization Attacker with Staged Training}},
+  author    = {Ridwan Arefeen and Xiaoxiao Miao and Rong Tong and Timothy Liu and Aik Beng Ng and Simon See},
+  year      = {2026},
+  booktitle = {{Interspeech 2026}},
+  pages     = {5276--5281},
+  doi       = {10.21437/Interspeech.2026-3094},
+  issn      = {2958-1796},
 }
 ```
-
-### Paper 2 — Multilingual Voice Anonymization Attacks
 
 ```bibtex
 @misc{arefeen2026exploitingacousticcontentorientedspeaker,
