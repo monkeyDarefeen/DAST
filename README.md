@@ -191,7 +191,6 @@ DAST/
 │   ├── Muon/                  # Vendored Muon optimizer (optional)
 │   └── utils/                 # Helpers: Kaldi I/O, path management, logging, result conversion
 ├── pretrained_ckpt_multiVC/  # DAST checkpoint fine-tuned on the MultiVC dataset
-└── SLT_2026_post(1).pdf      # Paper describing the MultiVC-based multilingual attacker experiments
 ```
 
 ---
