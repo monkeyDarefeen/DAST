@@ -1,22 +1,14 @@
-# DAST: Dual-Stream Voice Anonymization Attacker
-
-This repository provides the implementation, training resources, pretrained checkpoints, and inference pipeline for **DAST**, a speaker verification attacker based on WavLM-Large features and an ECAPA-TDNN speaker embedding model (192-dimensional embeddings).
+# Papers Associated with This Repository
+##  DAST: Dual-Stream Voice Anonymization Attacker with Staged Training [Paper (arXiv:2603.12840)](https://arxiv.org/abs/2603.12840)
+##  Exploiting Acoustic and Content-Oriented Speaker Verification Attacks Against Multilingual Voice Anonymization [Paper (arXiv:2610.08107)](https://arxiv.org/abs/2610.08107)
 
 **This repository accompanies two related research papers:** the original DAST work and a follow-up study of acoustic- and content-oriented speaker verification attacks against multilingual voice anonymization. The second paper builds on the DAST attacker and introduces MultiVC-based adaptation for multilingual and cross-lingual attack experiments.
 
-## Papers Associated with This Repository
-
-### Paper 1 — DAST: Dual-Stream Voice Anonymization Attacker with Staged Training
-
-**Ridwan Arefeen, Xiaoxiao Miao, Rong Tong, Aik Beng Ng, Simon See, and Timothy Liu (2026)**  
-[Paper (arXiv:2603.12840)](https://arxiv.org/abs/2603.12840)
+### Paper 1 — DAST: Dual-Stream Voice Anonymization Attacker with Staged Training 
 
 This is the **foundational DAST paper** describing the attacker and its staged training approach. The core model implementation, training pipeline, and original pretrained DAST checkpoints are associated with this work.
 
 ### Paper 2 — Exploiting Acoustic and Content-Oriented Speaker Verification Attacks Against Multilingual Voice Anonymization
-
-**Ridwan Arefeen, Ze Li, Rong Tong, Ming Li, and Xiaoxiao Miao (2026)**  
-[Paper (arXiv:2610.08107)](https://arxiv.org/abs/2610.08107)
 
 This **follow-up paper** examines acoustic- and content-oriented speaker verification attacks against multilingual voice anonymization. In this repository, it is associated with the **MultiVC-adapted DAST acoustic attacker** and experiments involving multilingual and cross-lingual voice anonymization. MultiVC is a multilingual voice-converted corpus created using seven voice-conversion systems.
 
